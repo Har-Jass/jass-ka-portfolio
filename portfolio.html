@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website - Jass</title>
+    <link rel="stylesheet" href="portfolioStyles.css">
+
+    <!-- include html2pdf.js -->
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="container">
+            <!-- Section - 1 - Navigation Bar -->
+            <!-- creating a navigation bar at the top of the portfolio website -->
+            <div class="navbar">
+                <!-- first part of navbar is that we create the logo at the left side of the page -->
+                <div class="logo-container">
+                    <!-- first we have an image, i.e., "J" -->
+                    <img src="./images/userAsset/NavLogo.jpg" class="logo">
+                    
+                    <!-- then we have the text, i.e., "ass" -->
+                    <div class="logo-text">ass</div>
+                </div>
+
+                <!-- second part of navbar is that we have some links at the right side of the page -->
+                <div class="nav-items">
+                    <!-- first link is for Projects -->
+                    <div>
+                        <a href="#projects">Projects</a>
+                    </div>
+
+                    <!-- second link is for Projects -->
+                    <div>
+                        <a href="#skills">Skills</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section - 2 - Description/Hero Section -->
+            <!-- creating a hero section -->
+            <!-- hero-section ka left part contain some text and button -->
+            <!-- hero-section ka right part contain and image with floating icons there -->
+            <div class="hero-section">
+                <!-- creating left part of hero-section -->
+                <div class="hero-section-left">
+                    <!-- 1st part is heading -->
+                    <div class="hero-section-heading">Hi! I'm Harjaspreet Singh</div>
+                    
+                    <!-- 2nd part is running text -->
+                    <div class="hero-section-heading hero-section-sub-heading">
+                        I am a <span class="role"></span>
+                    </div>
+
+                    <!-- 3rd part is description of hero section -->
+                    <div class="hero-section-description">
+                        Welcome to my digital space, where the pixels tell the story of my journey as a software developer. 
+                        <br />
+                    </div>
+
+                    <!-- this div contains my resume in PDF format -->
+                    <div id="pdfContainer"></div>
+
+                    <!-- 4th part is Hire Me button -->
+                    <div class="project-skill-button">
+                        <a href="https://drive.google.com/file/d/1Trml9Qg5TsXlKDYreL4Jaaig6hu6d610/view?usp=sharing" download class="btn-download download-button" id="downloadButton" target=”_blank”>
+                            <i class="fa-sharp fa-solid fa-download download-icon"></i>
+                            Download Resume
+                        </a>
+                    </div>
+
+
+                    <script>
+                        document.getElementById('downloadButton').addEventListener('click', function() {
+                          const resumeElement = document.getElementById('yourResumeId');
+                          const options = {
+                            margin: 10,
+                            filename: 'your_resume.pdf',
+                            // Additional options as needed
+                          };
+                          html2pdf(resumeElement, options);
+                        });
+                    </script>
+                </div>
+
+                <!-- creating right part of hero-section -->
+                <div class="hero-section-right">
+                    <!-- right part me bss images hai -->
+                    <div class="absolute icons icon-dots">
+                        <img src="./images/userAsset/dots.png" alt="" />
+                    </div>
+
+                    <div class="absolute icons icon-cube">
+                        <img src="./images/userAsset/cube.png" alt="" />
+                    </div>
+
+                    <div class="absolute icons icon-circle">
+                        <img src="./images/userAsset/circle.png" alt="" />
+                    </div>
+
+                    <div class="absolute icons icon-zigzag">
+                        <img src="./images/userAsset/zigzags.png" alt="" />
+                    </div>
+
+                    <div class="absolute icons icon-plus">
+                        <img src="./images/userAsset/plus.png" alt="" />
+                    </div>
+
+                    <div class="user-image">
+                        <img src="./images/userAsset/projectImage.jpg" alt="" />
+                    </div>
+                </div>
+
+                <!-- faded text under Hero Section -->
+                <div class="faded-text">Jass</div>
+            </div>
+        </div>
+
+        <!-- Section - 3 - Projects Section -->
+        <div class="project-section" id="projects">
+            <!-- in Projects section, first of all we have the Heading named "Projects" -->
+            <h2 class="page-header">Projects</h2>
+
+            <!-- after heading we have the list of projects -->
+            <!-- this section contains all the images of projects and all icons and texts on the project images -->
+            <!-- we've created a project container and iss project container me hmare saare projects list honge -->
+            <div class="project-container">
+                <!-- now we create every project in the form of card -->
+
+                <!-- Project Card 1 -->
+                <div class="project-card" id="project1">
+                    <!-- card me sbse pehle project number ayega -->
+                    <div class="project-number project-number-right">01</div>
+
+                    <!-- project number ke baad saara project ka content ayega -->
+                    <div class="project-content project-content-left">
+                        <!-- project content me sbse pehle skills ke saare icons ayege -->
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                        </div>
+
+                        <!-- skills ke baad project ki heading ayegi -->
+                        <h2 class="project-heading">Password Generator</h2>
+
+                        <!-- project heading ke baad sub-heading ayegi -->
+                        <div class="project-sub-heading">Generate strong, customizable passwords with user-specified criteria and visual strength indicators.</div>
+
+                        <!-- project subheading ke baad project card me ek button hai and 2 icons hai -->
+                        <div class="btn-group">
+                            <!-- button ke baad GitHub ka Link Icon aata hai -->
+                            <a href="https://github.com/Har-Jass/Password-Generator-Hosting" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            
+                            <!-- GitHub ke icon ke baad Live ka Link Icon aata hai -->
+                            <a href="https://password-generator-hosting.vercel.app/" target="_blank">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card" id="project2">
+                    <div class="project-number project-number-left">02</div>
+                    <div class="project-content project-content-right">
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                        </div>
+                        <h2 class="project-heading">Weather Application</h2>
+                        <p class="project-sub-heading">Implemented OpenWeatherMap API for real-time weather data, geolocation, and city-specific searches with user-friendly visuals.</p>
+                        <div class="btn-group">
+                            <a href="https://github.com/Har-Jass/Weather-Application-Hosting" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="https://weather-application-one-swart.vercel.app/" target="_blank">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card" id="project3">
+                    <div class="project-number project-number-right">03</div>
+                    <div class="project-content project-content-left">
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                            <img class="project-skill" src="./images/stack/Vercel.svg" alt="" />
+                            <img class="project-skill" src="./images/stack//React.png" alt="" />
+                        </div>
+                        <h2 class="project-heading">Random Gif Generator</h2>
+                        <p class="project-sub-heading">Generates Random GIF's with a Single Click, user input feature allowing users to Generate GIF's based
+                            on their Input.</p>
+                        <div class="btn-group">
+                            <a href="https://github.com/Har-Jass/Random-Gif-Generator-Hosting" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="https://random-gif-generator-theta.vercel.app/" target="_blank">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="project-card" id="project4">
+                    <div class="project-number project-number-left">04</div>
+                    <div class="project-content project-content-right">
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./images/stack//CSS.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Express.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                            <img class="project-skill" src="./images/stack/MongoDB.svg" alt="" />
+                            <img class="project-skill" src="./images/stack/NodeJs.svg" alt="" />
+                            <img class="project-skill" src="./images/stack/React.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Redux.svg" alt="" />
+                            <img class="project-skill" src="./images/stack/Tailwind.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Vercel.svg" alt="" />
+                        </div>
+                        <h2 class="project-heading">StudyNotion (In Progress)</h2>
+                        <p class="project-sub-heading">StudyNotion is a MERN-based ed-tech platform allowing users to create, consume, and rate educational content,
+                            fostering seamless, interactive learning for students and providing instructors a global showcase for expertise.</p>
+                        <div class="btn-group">
+                            <a href="https://github.com/Har-Jass/StudyNotion-Frontend" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="https://study-notion-iota-gold.vercel.app/" target="_blank">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="project-card" id="project5">
+                    <!-- card me sbse pehle project number ayega -->
+                    <div class="project-number project-number-right">05</div>
+
+                    <!-- project number ke baad saara project ka content ayega -->
+                    <div class="project-content project-content-left">
+                        <!-- project content me sbse pehle skills ke saare icons ayege -->
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/MongoDB.svg" alt="" />
+                            <img class="project-skill" src="./images/stack/Express.png" alt="" />
+                            <img class="project-skill" src="./images/stack/React.png" alt="" />
+                            <img class="project-skill" src="./images/stack/NodeJs.svg" alt="" />
+                        </div>
+
+                        <!-- skills ke baad project ki heading ayegi -->
+                        <h2 class="project-heading">DoDo Task Manager</h2>
+
+                        <!-- project heading ke baad sub-heading ayegi -->
+                        <div class="project-sub-heading">Developed a MERN Todo Application with Secure Authentication, CRUD Operations, MongoDB Storage. Responsive React
+                            Front-End, backed by Node.js and Express.js for efficient Server-Side handling.</div>
+
+                        <!-- project subheading ke baad project card me ek button hai and 2 icons hai -->
+                        <div class="btn-group">
+                            <!-- button ke baad GitHub ka Link Icon aata hai -->
+                            <a href="https://github.com/Har-Jass/DoDo-Hosting" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6 -->
+                <div class="project-card" id="project6">
+                    <div class="project-number project-number-left">06</div>
+                    <div class="project-content project-content-right">
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                            <img class="project-skill" src="./images/stack/React.png" alt="" />
+                        </div>
+                        <h2 class="project-heading">Movie Search Website</h2>
+                        <p class="project-sub-heading">The React-powered movie website enables users to effortlessly search and discover detailed information about movies, featuring real-time suggestions and a responsive design, along with additional functionalities like favoriting and social media integration for an enriched user experience.</p>
+                        <div class="btn-group">
+                            <a href="https://github.com/Har-Jass/Movie-Search-Application-Hosting" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="https://movie-search-application-three.vercel.app/" target="_blank">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 7 -->
+                <div class="project-card" id="project7">
+                    <!-- card me sbse pehle project number ayega -->
+                    <div class="project-number project-number-right">07</div>
+
+                    <!-- project number ke baad saara project ka content ayega -->
+                    <div class="project-content project-content-left">
+                        <!-- project content me sbse pehle skills ke saare icons ayege -->
+                        <div class="project-skills-container">
+                            <img class="project-skill" src="./images/stack/HTML.png" alt="" />
+                            <img class="project-skill" src="./images/stack/CSS.png" alt="" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" alt="" />
+                        </div>
+
+                        <!-- skills ke baad project ki heading ayegi -->
+                        <h2 class="project-heading">QR Code Generator</h2>
+
+                        <!-- project heading ke baad sub-heading ayegi -->
+                        <div class="project-sub-heading">QR Code Generator: Easily create personalized QR codes by inputting links, streamlining access to web content with a simple, user-friendly interface.</div>
+
+                        <!-- project subheading ke baad project card me ek button hai and 2 icons hai -->
+                        <div class="btn-group">
+                            <!-- button ke baad GitHub ka Link Icon aata hai -->
+                            <a href="https://github.com/Har-Jass/QR-Code-Generator" target="_blank">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+
+                            <!-- GitHub ke icon ke baad Live ka Link Icon aata hai -->
+                            <a href="https://qr-code-generator-xi-nine.vercel.app/" target="_blank">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section - 4 - Skill Section -->
+        <!-- Skill section has 2 parts, i.e., left part and right part -->
+        <div class="skills-container container" id="skills">
+            <!-- this is the left part of skill container -->
+            <div class="skill-container-left">
+                <!-- this is the heading of the skill section -->
+                <h2 class="skill-heading">
+                    <span class="caps">M</span>y Skills
+                    <br/>
+                </h2>
+                
+                <!-- this is the paragraphs about myself -->
+                <div class="skill-subHeading">
+                    <!-- paragraph 1 -->
+                    <p>
+                        HTML (Hypertext Markup Language) is the backbone of web content, providing the structure for your web pages. 
+                        CSS (Cascading Style Sheets) is used to enhance the presentation and layout, ensuring a visually appealing and responsive design. 
+                        JavaScript is a versatile programming language that enables you to create dynamic and interactive elements on your website, 
+                        making it more engaging for users.
+                    </p>
+
+                    <!-- paragraph 2 -->
+                    <p>
+                        ReactJS is a popular front-end library for building user interfaces, allowing for the creation of efficient and modular components. 
+                        NodeJS, on the other hand, is a server-side JavaScript runtime, enabling you to build scalable and high-performance applications.
+                    </p>    
+
+                    <!-- paragraph 3 -->
+                    <p>
+                        Tailwind CSS streamlines the styling process by providing pre-defined classes that you can apply directly in your HTML, 
+                        fostering a more efficient and consistent design approach. Git and GitHub highlights the version control, 
+                        essential for collaborative development and project management. MongoDB, a NoSQL database, is capable to work with non-relational databases. 
+                    </p>
+
+                    <!-- paragraph 4 -->
+                    <p>
+                        Finally, deploying the projects on 
+                        Vercel demonstrates the understanding of hosting and continuous deployment, showcasing a holistic skill set in modern web development.
+                    </p>
+                </div>
+            </div>
+
+            <!-- this is the right part of skill container -->
+            <div class="skill-container-right">
+                <!-- this is the images which will be at the skills section tech stack -->
+                <img src="./images/stack/HTML.png" alt="" class="skills-logo" />
+                <img src="./images/stack/CSS.png" alt="" class="skills-logo" />
+                <img src="./images/stack/Javascript.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/React.png" alt="" class="skills-logo" />
+                <img src="./images/stack/NodeJs.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Tailwind.png" alt="" class="skills-logo" />
+                <img src="./images/stack/Express.png" alt="" class="skills-logo" />
+                <img src="./images/stack/Git.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Github.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/MongoDB.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Vercel.svg" alt="" class="skills-logo" />
+
+                <!-- this is the moving blob at the back of the images -->
+                <img src="./images/userAsset/blob vector.png" class="blob-style" alt="" />
+            </div>
+
+            <!-- this will be the faded text like previous one -->
+            <div class="skill-fade-text">Skills</div>
+        </div>
+
+        <!-- Section - 6 - Footer Section -->
+        <!-- this section contains a Footer of the website -->
+        <footer>
+            <div class="container">
+                <div class="footer-wrapper">
+                    <!-- this is the faded text in the footer -->
+                    <div class="footer-faded-text">Jass</div>
+                    
+                    <!-- this contains all the links -->
+                    <div class="link-wrapper">
+                        <div>
+                            <a href="#projects">Projects</a>
+                        </div>
+
+                        <div>
+                            <a href="#skills">Skills</a>
+                        </div>
+                    </div>
+
+                    <!-- this div contains the icons in the footer -->
+                    <div class="icon-wrapper">
+                        <a href="https://www.linkedin.com/in/harjaspreet-singh-5351b2145/" target="_blank">
+                            <i class="fa-brands fa-linkedin icon"></i>
+                        </a>
+                        <a href="https://github.com/Har-Jass" target="_blank">
+                            <i class="fa-brands fa-github icon"></i>
+                        </a>
+                        <a href="https://www.instagram.com/jassoye/" target="_blank">
+                            <i class="fa-brands fa-instagram icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- below is the script for running text in hero-section -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script>
+        var typeData = new Typed(".role", {
+            strings: [
+                "Full Stack Developer",
+                "Web Developer",
+                "Backend Developer",
+                "Coder",
+            ],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+        });
+    </script>
+</body>
+</html>
